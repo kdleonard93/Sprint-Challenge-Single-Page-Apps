@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 
-function LocationCard({ name, type, dimension, residents }) {
+function LocationCard(props) {
   return (
     <Card>
       <CardBody body inverse color="info">

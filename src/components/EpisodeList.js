@@ -15,14 +15,14 @@ const EpisodeList = props => {
       .catch(error => {
         console.log("Error: ", error);
       });
-  }, []);
+  }, [setEpisode]);
 
   return (
     <section className="episode-list grid-view">
       {episode.map(epi => {
         return (
           <div>
-            <EpisodeCard key={epi.id} episode={episode}></EpisodeCard>
+            <EpisodeCard key={epi.id} episode={epi}></EpisodeCard>
           </div>
         );
       })}

@@ -15,13 +15,13 @@ function LocationsList() {
       .catch(error => {
         console.log("Error: ", error);
       });
-  }, []);
+  }, [setLocation]);
   return (
     <section className="location-list grid-view">
       {location.map(local => {
         return (
           <div>
-            <LocationCard key={local.id} location={location}></LocationCard>
+            <LocationCard key={local.id} location={local}></LocationCard>
           </div>
         );
       })}

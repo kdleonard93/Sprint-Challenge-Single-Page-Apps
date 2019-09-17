@@ -14,18 +14,19 @@ export default function CharacterList() {
       .get("https://rickandmortyapi.com/api/character/")
       .then(response => {
         setCharacter(response.data.results);
+        console.log(response);
       })
       .catch(error => {
         console.log("Error: ", error);
       });
-  }, []);
+  }, [setCharacter]);
 
   return (
     <section className="character-list grid-view">
       {character.map(char => {
         return (
           <div>
-            <CharacterCard key={char.id} character={character}></CharacterCard>
+            <CharacterCard key={char.id} character={char}></CharacterCard>
           </div>
         );
       })}

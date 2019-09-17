@@ -1,6 +1,7 @@
 import React from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
+import "react-tabs/style/react-tabs.css";
 
 // TODO: Add missing menu/tabs/nav below
 
@@ -10,6 +11,26 @@ import { NavLink } from "react-router-dom";
 // https://react.semantic-ui.com/elements/button/
 // https://react.semantic-ui.com/collections/breadcrumb/
 
-export default function TabNav() {
+function TabNav() {
+  return (
+    <Menu>
+      <NavLink exact to="/" activeClassName="nav-links">
+        Home Page
+      </NavLink>
+      <i className="right angle icon divider"></i>
+      <NavLink exact to="/characters" activeClassName="nav-links">
+        Characters
+      </NavLink>
+      <i className="right angle icon divider"></i>
+      <NavLink exact to="/locations" activeClassName="nav-links">
+        Locations
+      </NavLink>
+      <i className="right angle icon divider"></i>
+      <NavLink exact to="/episodes" activeClassName="nav-links">
+        Episodes
+      </NavLink>
+    </Menu>
+  );
+}
 
-};
+export default TabNav;

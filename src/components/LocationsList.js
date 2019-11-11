@@ -23,7 +23,7 @@ function LocationsList() {
     <section className="location-list grid-view">
       {location.map(local => (
         <div>
-          <LocationCard key={local.name} location={local}></LocationCard>
+          <LocationCard key={local.id}></LocationCard>
         </div>
       ))}
     </section>

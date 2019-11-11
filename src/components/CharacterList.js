@@ -26,7 +26,15 @@ export default function CharacterList() {
       {character.map(char => {
         return (
           <div>
-            <CharacterCard key={char.id} character={char}></CharacterCard>
+            <CharacterCard
+              key={char.id}
+              name={char.name}
+              species={char.species}
+              gender={char.gender}
+              origin={char.origin}
+              location={char.location}
+              status={char.status}
+            ></CharacterCard>
           </div>
         );
       })}

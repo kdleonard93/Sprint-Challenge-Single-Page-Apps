@@ -12,6 +12,10 @@ import {
 import { Link } from "react-router-dom";
 
 function CharacterCard(props) {
+  const Name = styled(CardTitle)`
+    font-size: 20px;
+  `;
+
   const Status = styled.h3`
     color: goldenrod;
   `;
@@ -31,33 +35,31 @@ function CharacterCard(props) {
     }
   `;
 
-  const Name = styled(CardTitle)`
-    font-size: 20px;
-  `;
-
-  const character = props.item;
-
   return (
     <CharCard>
-      <CardImg top width="100%" src={image} alt="Rick and Morty Character" />
       <CardBody body inverse color="primary">
+        <CardImg
+          top
+          width="100%"
+          src={props.image}
+          alt="Rick and Morty Character"
+        />
         <Name>
-          {character.name} <Status>{status}</Status>
+          {props.name} <Status>{props.status}</Status>
         </Name>
-        <CardText>Species: {species}</CardText>
-        <CardText>Gender: {gender}</CardText>
-        <CardText>Origin: {origin.name}</CardText>
-        <CardText>Location: {location.name}</CardText>
+        <CardText>Species: {props.species}</CardText>
+        <CardText>Gender: {props.gender}</CardText>
+        <CardText>Origin: {props.origin.name}</CardText>
+        <CardText>Location: {props.location.name}</CardText>
       </CardBody>
-      <Toast>
+      {/* <Toast>
         <ToastHeader icon="dark">
           <Link to="/episodes" exact>
             Episodes
           </Link>
         </ToastHeader>
-      </Toast>
+      </Toast> */}
     </CharCard>
   );
 }
-d;
 export default CharacterCard;

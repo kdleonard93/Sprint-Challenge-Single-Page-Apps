@@ -1,6 +1,6 @@
 import React from "react";
-import { Menu } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { Menu, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "react-tabs/style/react-tabs.css";
 
 // TODO: Add missing menu/tabs/nav below
@@ -14,21 +14,18 @@ import "react-tabs/style/react-tabs.css";
 function TabNav() {
   return (
     <Menu>
-      <NavLink exact to="/" activeClassName="nav-links">
-        Home Page
-      </NavLink>
-      <i className="right angle icon divider"></i>
-      <NavLink exact to="/characters" activeClassName="nav-links">
-        Characters
-      </NavLink>
-      <i className="right angle icon divider"></i>
-      <NavLink exact to="/locations" activeClassName="nav-links">
-        Locations
-      </NavLink>
-      <i className="right angle icon divider"></i>
-      <NavLink exact to="/episodes" activeClassName="nav-links">
-        Episodes
-      </NavLink>
+      <Link to="/">
+        <Button>Home</Button>
+      </Link>
+      <Link to="/characters">
+        <Button>Characters</Button>
+      </Link>
+      <Link to="/locations">
+        <Button>Locations</Button>
+      </Link>
+      <Link to="/episodes">
+        <Button>Episodes</Button>
+      </Link>
     </Menu>
   );
 }

@@ -19,7 +19,7 @@ export default function CharacterList() {
       .catch(error => {
         console.log("Error: ", error);
       });
-  }, [setCharacter]);
+  }, []);
 
   return (
     <section className="character-list grid-view">

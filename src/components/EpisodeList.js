@@ -15,7 +15,7 @@ const EpisodeList = props => {
       .catch(error => {
         console.log("Error: ", error);
       });
-  }, [setEpisode]);
+  }, []);
 
   return (
     <section className="episode-list grid-view">

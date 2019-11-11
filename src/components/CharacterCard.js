@@ -16,23 +16,34 @@ function CharacterCard(props) {
     color: goldenrod;
   `;
 
-  const {
-    image,
-    name,
-    status,
-    species,
-    gender,
-    origin,
-    location
-  } = props.character;
+  const CharCard = styled(Card)`
+    margin: 30px 20px 0 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 350px;
+    width: 350px;
+    background-color: rgba(255, 250, 250, 0.8);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in;
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  `;
+
+  const Name = styled(CardTitle)`
+    font-size: 20px;
+  `;
+
+  const character = props.item;
 
   return (
-    <Card>
+    <CharCard>
       <CardImg top width="100%" src={image} alt="Rick and Morty Character" />
       <CardBody body inverse color="primary">
-        <CardTitle>
-          {name} <Status>{status}</Status>
-        </CardTitle>
+        <Name>
+          {character.name} <Status>{status}</Status>
+        </Name>
         <CardText>Species: {species}</CardText>
         <CardText>Gender: {gender}</CardText>
         <CardText>Origin: {origin.name}</CardText>
@@ -45,8 +56,8 @@ function CharacterCard(props) {
           </Link>
         </ToastHeader>
       </Toast>
-    </Card>
+    </CharCard>
   );
 }
-
+d;
 export default CharacterCard;

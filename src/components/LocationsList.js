@@ -3,27 +3,30 @@ import LocationCard from "./LocationCard";
 import axios from "axios";
 
 function LocationsList() {
-  const [location, setLocation] = useState([]);
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    const fetchLocation = () => {
-      axios
-        .get("https://rickandmortyapi.com/api/location/")
-        .then(response => {
-          setLocation(response.data.results);
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log("Error: ", error);
-        });
-    };
-    fetchLocation();
+    axios
+      .get("https://rickandmortyapi.com/api/location/")
+      .then(response => {
+        setLocations(response.data.results);
+        console.log(response);
+      })
+      .catch(error => {
+        console.log("Error: ", error);
+      });
   }, []);
   return (
     <section className="location-list grid-view">
-      {location.map(local => (
+      {locations.map(local => (
         <div>
-          <LocationCard key={local.id}></LocationCard>
+          <LocationCard
+            key={local.name}
+            name={local.name}
+            type={local.type}
+            dimension={local.dimension}
+            residents={local.residents}
+          />
         </div>
       ))}
     </section>

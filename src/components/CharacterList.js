@@ -5,7 +5,7 @@ import CharacterCard from "./CharacterCard";
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
 
-  const [character, setCharacter] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -13,7 +13,7 @@ export default function CharacterList() {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then(response => {
-        setCharacter(response.data.results);
+        setCharacters(response.data.results);
         console.log(response);
       })
       .catch(error => {
@@ -23,18 +23,18 @@ export default function CharacterList() {
 
   return (
     <section className="character-list grid-view">
-      {character.map(char => {
+      {characters.map(char => {
         return (
           <div>
             <CharacterCard
-              key={char.id}
+              key={char.name}
               name={char.name}
               species={char.species}
               gender={char.gender}
               origin={char.origin}
               location={char.location}
               status={char.status}
-            ></CharacterCard>
+            />
           </div>
         );
       })}

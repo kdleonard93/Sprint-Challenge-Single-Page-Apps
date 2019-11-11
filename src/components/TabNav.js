@@ -17,13 +17,13 @@ function TabNav() {
       <Link to="/">
         <Button>Home</Button>
       </Link>
-      <Link to="/characters">
+      <Link to="/character">
         <Button>Characters</Button>
       </Link>
-      <Link to="/locations">
+      <Link to="/location">
         <Button>Locations</Button>
       </Link>
-      <Link to="/episodes">
+      <Link to="/episode">
         <Button>Episodes</Button>
       </Link>
     </Menu>

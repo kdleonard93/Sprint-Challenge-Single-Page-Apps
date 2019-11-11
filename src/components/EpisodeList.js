@@ -3,13 +3,13 @@ import axios from "axios";
 import EpisodeCard from "./EpisodeCard";
 
 const EpisodeList = props => {
-  const { episode, setEpisode } = useState([]);
+  const { episode, setEpisodes } = useState([]);
 
   useEffect(() => {
     axios
       .get("https://rickandmortyapi.com/api/episode/")
       .then(response => {
-        setEpisode(response.data.results);
+        setEpisodes(response.data.results);
         console.log(response);
       })
       .catch(error => {
@@ -17,12 +17,18 @@ const EpisodeList = props => {
       });
   }, []);
 
+  console.log(episode);
+
   return (
     <section className="episode-list grid-view">
       {episode.map(epi => {
         return (
           <div>
-            <EpisodeCard key={epi.id} episode={epi}></EpisodeCard>
+            <EpisodeCard
+              key={epi.name}
+              episode={epi.episode}
+              date={epi.air_date}
+            />
           </div>
         );
       })}

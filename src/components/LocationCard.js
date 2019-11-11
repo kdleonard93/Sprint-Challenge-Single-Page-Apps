@@ -18,13 +18,12 @@ const LocalCard = styled(Card)`
 `;
 
 function LocationCard(props) {
-  const { name, type, dimension, residents } = props.location;
   return (
     <LocalCard>
-      <CardText>{name}</CardText>
-      <CardText>{type}</CardText>
-      <CardText>{dimension}</CardText>
-      <CardText>{residents}</CardText>
+      <CardText>{props.name}</CardText>
+      <CardText>{props.type}</CardText>
+      <CardText>{props.dimension}</CardText>
+      <CardText>{props.residents}</CardText>
     </LocalCard>
   );
 }

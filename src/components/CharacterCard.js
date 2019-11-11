@@ -37,7 +37,7 @@ function CharacterCard(props) {
 
   return (
     <CharCard>
-      <CardBody body inverse color="primary">
+      <CardBody color="primary">
         <CardImg
           top
           width="100%"

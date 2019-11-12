@@ -3,7 +3,7 @@ import axios from "axios";
 import EpisodeCard from "./EpisodeCard";
 
 const EpisodeList = props => {
-  const { episode, setEpisodes } = useState([]);
+  const [episode, setEpisodes] = useState([]);
 
   useEffect(() => {
     axios
